@@ -1,0 +1,9 @@
+<h2>Word cloud for <%- Lucy.code.variable('answers.title') %></h2>
+<%- Lucy.for('page in result.query.pages') %>
+<%- Lucy.include('word_cloud', {
+  data: {
+    action: 'get_word_cloud',
+    textblock: {answer: 'result.query.pages[page].extract'},
+  }
+}) %>
+<%- Lucy.rof() %>

@@ -1,0 +1,28 @@
+{
+"name": "wikipedia_cloud",
+"title": "Word Clouds for Wikipedia Articles",
+"description": "Combine the Wikipedia and MakeWordCloud APIs to create a word cloud for any Wikipedia article",
+"actions": ["get_article", "get_word_cloud"],
+"views": ["wikipedia_word_cloud", "word_cloud"],
+"pages": [{
+  "view": "wikipedia_word_cloud",
+  "data": {
+    "action": "get_article"
+  }
+}],
+"control_sets": [{
+  "title": "Getting the Article Contents",
+  "tip": "Use the Wikimedia API to retrieve articles from Wikipedia.",
+  "affects": "get_article",
+  "inputs": [{
+    "name": "title",
+    "label": "Article Title",
+    "type": "text",
+    "default": "Application programming interface"
+  }]
+}, {
+  "title": "Generating the Word Cloud",
+  "tip": "Use the MakeWordCloud API to generate the wordcloud",
+  "affects": "get_word_cloud"
+}]
+}
